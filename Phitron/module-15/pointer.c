@@ -1,13 +1,16 @@
 #include <stdio.h>
+
+void fun(int *sum)
+{
+    *sum = *sum + 40;
+}
+
 int main()
 {
-    int x;
-    scanf("%d", &x);
-    int *p = &x;
-    printf("%d\n", x);
-    printf("%p\n", &x);
+    int sum = 10;
+    printf("sum = %d\n", sum);
 
-    *p = 20;
-    printf("%d", x);
+    fun(&sum);
+    printf("sum = %d", sum);
     return 0;
 }
